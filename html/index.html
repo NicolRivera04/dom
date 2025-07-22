@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller DOM</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <h1>Ejercicios DOM propuestos en clase</h1>
+
+    <hr>
+
+    <nav>
+        <button onclick="cargarEjercicio(1)">Ejercicio 1</button>
+        <button onclick="cargarEjercicio(2)">Ejercicio 2</button>
+        <button onclick="cargarEjercicio(3)">Ejercicio 3</button>
+        <button onclick="cargarEjercicio(4)">Ejercicio 4</button>
+        <button onclick="cargarEjercicio(5)">Ejercicio 5</button>
+        <button onclick="cargarEjercicio(6)">Ejercicio 6</button>
+    </nav>
+<hr>
+    <div id="contenido"></div>
+
+    <script>
+        function cargarEjercicio(numero) {
+            fetch(`scripts/ejer${numero}.js`)
+                .then(response => response.text())
+                .then(code => {
+                    eval(code);
+                });
+        }
+    </script>
+
+</body>
+</html>
