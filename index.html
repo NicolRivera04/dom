@@ -24,12 +24,12 @@
 
     <script>
         function cargarEjercicio(numero) {
-            fetch(`scripts/ejer${numero}.js`)
+            fetch(`js/ejer${numero}.js`)
                 .then(response => response.text())
                 .then(code => {
                     eval(code);
                 });
-        }
+        }   
     </script>
 
 </body>
